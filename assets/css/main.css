@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Ledger&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme {
+    /* Custom Color */
+    --color-custompink: #FF64D4;
+    --color-customblue: #42C6FF;
+    --color-customyellow: #FFE142;
+
+    /* Custom fonts */
+    --font-roboto: "Roboto", "sans-serif";
+    --font-ledger: "Ledger", "sans-serif";
+}
