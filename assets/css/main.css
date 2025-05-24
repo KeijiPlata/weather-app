@@ -1,15 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Ledger&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ledger&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 @import "tailwindcss";
 @import "@nuxt/ui";
 
 @theme {
-    /* Custom Color */
-    --color-custompink: #FF64D4;
-    --color-customblue: #42C6FF;
-    --color-customyellow: #FFE142;
+  /* Custom Color */
+  --color-custompink: #ff64d4;
+  --color-customblue: #42c6ff;
+  --color-customyellow: #ffe142;
 
-    /* Custom fonts */
-    --font-roboto: "Roboto", "sans-serif";
-    --font-ledger: "Ledger", "sans-serif";
+  /* Custom fonts */
+  --font-roboto: "Roboto", "sans-serif";
+  --font-ledger: "Ledger", "sans-serif";
+
+  /* Custom Animation */
+  --animate-wiggle: wiggle 1s ease-in-out infinite;
+  --animate-blink: blink 3s ease-in-out infinite;
+  --animate-wind: wind 2s ease-in-out infinite;
+
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-3deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.9);
+    }
+  }
+
+    @keyframes wind {
+    0%,
+    100% {
+      transform: translate(0px);
+    }
+    50% {
+      transform: translate(5px);
+    }
+  }
 }
