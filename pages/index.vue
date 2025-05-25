@@ -21,6 +21,29 @@ const todayWeather = ref([
         animation: 'animate-blink'
     }
 ])
+
+const weeklyWeather = ref([
+    {
+        temperature: '26',
+        icon: 'lucide:cloud',
+        date: '24 May'
+    },
+    {
+        temperature: '26',
+        icon: 'lucide:sun',
+        date: '24 May'
+    },
+    {
+        temperature: '26',
+        icon: 'lucide:cloud-rain',
+        date: '24 May'
+    },
+    {
+        temperature: '26',
+        icon: 'lucide:cloud-lightning',
+        date: '24 May'
+    }
+])
 </script>
 
 <template>
@@ -49,26 +72,8 @@ const todayWeather = ref([
             <div class="flex flex-col items-start justify-center gap-3 w-full max-w-md">
                 <h2 class="text-xl font-bold">Weekly Forecast</h2>
                 <div class="flex flex-row items-center justify-center gap-3 w-full">
-                    <div class="w-full outline-2 p-3 md:p-5 rounded-md flex flex-col items-center justify-center gap-2">
-                        <h2 class="text-xl font-bold">26&deg;</h2>
-                        <Icon name="lucide:cloud" class="text-3xl" />
-                        <p class="text-xs md:text-base">24 May</p>
-                    </div>
-                    <div class="w-full outline-2 p-3 md:p-5 rounded-md flex flex-col items-center justify-center gap-2">
-                        <h2 class="text-xl font-bold">26&deg;</h2>
-                        <Icon name="lucide:sun" class="text-3xl" />
-                        <p class="text-xs md:text-base">24 May</p>
-                    </div>
-                    <div class="w-full outline-2 p-3 md:p-5 rounded-md flex flex-col items-center justify-center gap-2">
-                        <h2 class="text-xl font-bold">26&deg;</h2>
-                        <Icon name="lucide:cloud-rain" class="text-3xl" />
-                        <p class="text-xs md:text-base">24 May</p>
-                    </div>
-                    <div class="w-full outline-2 p-3 md:p-5 rounded-md flex flex-col items-center justify-center gap-2">
-                        <h2 class="text-xl font-bold">26&deg;</h2>
-                        <Icon name="lucide:cloud-lightning" class="text-3xl" />
-                        <p class="text-xs md:text-base">24 May</p>
-                    </div>
+                    <ForecastCards v-for="(item, index) in weeklyWeather" :key="index" :temperature="item.temperature"
+                        :date="item.date" :icon="item.icon" />
                 </div>
             </div>
         </div>
