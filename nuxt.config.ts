@@ -7,5 +7,10 @@ export default defineNuxtConfig({
     icon: {
     mode: 'css',
     cssLayer: 'base'
+  },
+  runtimeConfig: {
+    public: {
+      weatherApiKey: process.env.WEATHER_API_KEY
+    }
   }
 })
