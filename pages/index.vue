@@ -1,3 +1,28 @@
+<script setup>
+import { ref } from 'vue';
+
+const todayWeather = ref([
+    {
+        name: 'Wind',
+        value: '4km/h',
+        icon: 'lucide:wind',
+        animation: 'animate-wind'
+    },
+    {
+        name: 'Humidity',
+        value: '48%',
+        icon: 'lucide:droplet',
+        animation: 'animate-bounce'
+    },
+    {
+        name: 'Visibility',
+        value: '1.68km',
+        icon: 'lucide:eye',
+        animation: 'animate-blink'
+    }
+])
+</script>
+
 <template>
     <div class="w-full h-full grid grid-cols-1 md:grid-cols-2 place-items-center md:gap-10 gap-7">
         <div class="w-full h-full flex flex-col justify-center md:items-end items-center">
@@ -20,29 +45,7 @@
             </div>
         </div>
         <div class="w-full h-full flex flex-col justify-center md:items-start items-center gap-5">
-            <div class="bg-black w-full text-custompink max-w-md rounded-md md:rounded-lg p-5 grid grid-cols-3">
-                <div class="w-full text-center flex flex-col gap-2 items-center justify-center">
-                    <Icon name="lucide:wind" class="text-5xl text-custompink animate-wind" />
-                    <div class="flex flex-col items-center justify-center">
-                        <h2 class="text-2xl">4km/h</h2>
-                        <p class="text-xs">Wind</p>
-                    </div>
-                </div>
-                <div class="w-full text-center flex flex-col gap-2 items-center justify-center">
-                    <Icon name="lucide:droplet" class="text-5xl animate-bounce" />
-                    <div class="flex flex-col items-center justify-center">
-                        <h2 class="text-2xl">48%</h2>
-                        <p class="text-xs">Humidity</p>
-                    </div>
-                </div>
-                <div class="w-full text-center flex flex-col gap-2 items-center justify-center">
-                    <Icon name="lucide:eye" class="text-5xl animate-blink" />
-                    <div class="flex flex-col items-center justify-center">
-                        <h2 class="text-2xl">1.68km</h2>
-                        <p class="text-xs">Visibility</p>
-                    </div>
-                </div>
-            </div>
+            <WeatherStats :data="todayWeather" />
             <div class="flex flex-col items-start justify-center gap-3 w-full max-w-md">
                 <h2 class="text-xl font-bold">Weekly Forecast</h2>
                 <div class="flex flex-row items-center justify-center gap-3 w-full">
