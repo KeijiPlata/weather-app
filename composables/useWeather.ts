@@ -6,18 +6,17 @@ export const useWeather = async (city: string = "davao") => {
 
   const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=14&aqi=no&alerts=no`;
 
-  const { data, error } = await useFetch<WeatherData>(url);
+  try {
+    const data = await $fetch<WeatherData>(url);
+    console.log("weather data:", data);
 
-  console.log("weather data:", data.value);
+    if (!data || !data.current) {
+      throw new Error("Weather data is missing expected structure");
+    }
 
-  if (error.value) {
-    console.error("Fetch error:", error.value);
+    return data;
+  } catch (error) {
+    console.error("Fetch error:", error);
     throw new Error("Failed to fetch weather");
   }
-
-  if (!data.value || !data.value.current) {
-    throw new Error("Weather data is missing expected structure");
-  }
-
-  return data.value;
 };
