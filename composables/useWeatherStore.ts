@@ -3,7 +3,7 @@ import { useWeather } from "./useWeather";
 import type { WeatherStat, WeeklyForecast } from "~/types/weatherStore";
 
 export function useWeatherStore() {
-  const city = ref<string>("Manila");
+  const city = ref<string>("Cainta");
   const temperature = ref<number>(0);
   const feelsLike = ref<number>(0);
   const condition = ref<string>("");

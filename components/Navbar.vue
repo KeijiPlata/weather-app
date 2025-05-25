@@ -14,6 +14,7 @@ function handleSearch() {
       icon="i-lucide-search"
       size="lg"
       placeholder="Search ..."
+      color="neutral"
       @keyup.enter="handleSearch"
       class="flex-1"
       :ui="{

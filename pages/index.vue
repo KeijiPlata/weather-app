@@ -46,7 +46,7 @@ console.log("location", location)
             <div class="flex flex-col items-start justify-center gap-3 w-full max-w-md">
                 <h2 class="text-xl font-bold">Weekly Forecast</h2>
                 <div class="flex flex-row items-center justify-center gap-3 w-full">
-                    <ForecastCards v-for="(item, index) in weeklyWeather" :key="index" :temperature="item.temperature"
+                    <ForecastCards v-for="(item, index) in weeklyWeather" :key="index" :temperature="item.temperature.toString()"
                         :date="item.date" :icon="item.icon" />
                 </div>
             </div>
