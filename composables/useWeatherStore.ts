@@ -1,9 +1,7 @@
-// useWeatherStore.ts
 import { ref } from "vue";
 import { useWeather } from "./useWeather";
 import type { WeatherStat, WeeklyForecast } from "~/types/weatherStore";
 
-// create refs outside the function so they are shared
 const city = ref<string>("Cainta");
 const temperature = ref<number>(0);
 const feelsLike = ref<number>(0);
