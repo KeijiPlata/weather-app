@@ -10,9 +10,14 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/icon": "^1.13.0",
     "@nuxt/ui": "^3.1.2",
     "nuxt": "^3.17.4",
+    "pinia": "^3.0.2",
     "vue": "^3.5.14",
     "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@iconify-json/meteocons": "^1.2.2"
   }
 }

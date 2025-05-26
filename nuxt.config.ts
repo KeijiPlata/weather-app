@@ -2,6 +2,15 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/ui'],
-  css: ['~/assets/css/main.css']
+  modules: ['@nuxt/ui', '@nuxt/icon'],
+  css: ['~/assets/css/main.css'],
+    icon: {
+    mode: 'css',
+    cssLayer: 'base'
+  },
+  runtimeConfig: {
+    public: {
+      weatherApiKey: process.env.WEATHER_API_KEY
+    }
+  }
 })
